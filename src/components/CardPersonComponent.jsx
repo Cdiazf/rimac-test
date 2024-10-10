@@ -1,5 +1,8 @@
+import { useState } from "react";
 
-const CardPersonComponent = () => {
+const CardPersonComponent = ({ onCheckboxChange }) => {
+    const [selectedCheckbox, setSelectedCheckbox] = useState(null);
+
     const cardData = [
         {
             id: "owner_1",
@@ -15,11 +18,23 @@ const CardPersonComponent = () => {
         }
     ];
 
+    const handleCheckboxChange = (id) => {
+        setSelectedCheckbox(id);
+        onCheckboxChange(id);
+        console.log(id)
+    };
+
     return (
         <div className="container-plan__cards">
             {cardData.map((card) => (
                 <div className="container-plan__card" key={card.id}>
-                    <input type="checkbox" id={card.id} className="card-plan__checkbox" />
+                    <input
+                        type="checkbox"
+                        id={card.id}
+                        className="card-plan__checkbox"
+                        checked={selectedCheckbox === card.id}
+                        onChange={() => handleCheckboxChange(card.id)}
+                    />
                     <img src={card.icon} alt="Icon" className="card-plan__icon" />
                     <h4 className="card-plan__title">{card.title}</h4>
                     <p className="card-plan__description">{card.description}</p>

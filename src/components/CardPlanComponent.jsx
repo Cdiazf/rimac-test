@@ -2,7 +2,7 @@ import { useFetchPlans } from "../hooks/useFetchPlans";
 import {calculateDiscount, useFormatDollar} from "../helper/Helper.jsx";
 import "./CardPlanComponent.scss";
 
-const CardPlanComponent = () => {
+const CardPlanComponent = ({ selectedPlan }) => {
     const { formatDollar } = useFormatDollar();
     const { plans, loading, error } = useFetchPlans();
 
@@ -21,11 +21,18 @@ const CardPlanComponent = () => {
                                 <div className="card-plan__title-container">
                                     <h2 className="card-plan__title">{plan.name}</h2>
                                     <h3 className="card-plan__sub-title">Costo de plan</h3>
-                                    <p className="card-plan__sub-price">
+                                    {selectedPlan === "owner_2" ?
+                                        (<p className="card-plan__sub-price">
                                         {formatDollar(plan.price)} antes
-                                    </p>
+                                        </p>)
+                                        :
+                                        (<p> </p>) }
+
                                     <p className="card-plan__sub-disc-price">
-                                        {formatDollar(discountPrice)} al mes
+                                        {selectedPlan === "owner_2" ?
+                                            ( <> {formatDollar(discountPrice)} al mes </>)
+                                            :
+                                            (<> {formatDollar(plan.price) } al mes</>)}
                                     </p>
                                 </div>
                                 <div className="card-plan__image-container">
