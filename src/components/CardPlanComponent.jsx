@@ -1,10 +1,21 @@
 import { useFetchPlans } from "../hooks/useFetchPlans";
 import {calculateDiscount, useFormatDollar} from "../helper/Helper.jsx";
 import "./CardPlanComponent.scss";
+import {useNavigate} from "react-router-dom";
 
 const CardPlanComponent = ({ selectedPlan }) => {
     const { formatDollar } = useFormatDollar();
     const { plans, loading, error } = useFetchPlans();
+    const navigate = useNavigate();
+
+
+    const handleSelectPlan = (plan) => {
+        // Store selected plan in localStorage
+        localStorage.setItem("selectedPlan", JSON.stringify(plan));
+        alert(`Has seleccionado el plan: ${plan.name}`);
+        navigate("/summary")
+    };
+
 
     if (loading) return <p>Cargando planes...</p>;
     if (error) return <p>Hubo un error al cargar los planes. Intenta de nuevo más tarde.</p>;
@@ -54,7 +65,8 @@ const CardPlanComponent = ({ selectedPlan }) => {
                                 </ul>
                             </div>
                             <div className="card-plan__footer">
-                                <button className="card-plan__button">Seleccionar Plan</button>
+                                <button className="card-plan__button" onClick={() => handleSelectPlan(plan)}
+                                >Seleccionar Plan</button>
                             </div>
                         </div>
                     </div>

@@ -62,7 +62,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateFields()) {
-            setLoading(true); // Set loading to true when submitting
+            setLoading(true);
             const { dniType, documentNumber, phone, privacyAccepted, communicationsAccepted } = formData;
             const combinedData = {
                 documentType: dniType,
@@ -72,14 +72,13 @@ const Register = () => {
                 communicationsAccepted,
             };
 
-            // Store form data and user data in localStorage
             localStorage.setItem("formData", JSON.stringify(combinedData));
-            localStorage.setItem("userData", JSON.stringify(userData)); // Store user data too
+            localStorage.setItem("userData", JSON.stringify(userData));
 
             setTimeout(() => {
                 setLoading(false); // Reset loading after the operation
-                navigate("/summary");
-            }, 2000); // Adjust the timeout as needed
+                navigate("/plans");
+            }, 1000); // Adjust the timeout as needed
         }
     };
 

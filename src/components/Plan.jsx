@@ -6,7 +6,6 @@ import {useState} from "react";
 
 const Plan = ()=>{
     const [selectedPlan, setSelectedPlan] = useState(null);
-
     const handleCheckboxChange = (id) => {
         setSelectedPlan(id);
     };

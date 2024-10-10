@@ -4,18 +4,26 @@ import BackButton from "./BackButton.jsx";
 
 const Summary = () => {
     const [summaryData, setSummaryData] = useState(null);
-    const [userData, setUserData] = useState(null); // State for user data
+    const [userData, setUserData] = useState(null);
+    const [selectedPlan, setSelectedPlan] = useState(null); // State for selected plan
+
 
     useEffect(() => {
         // Retrieve data from localStorage
         const formData = JSON.parse(localStorage.getItem("formData"));
+        const storedPlan = JSON.parse(localStorage.getItem("selectedPlan")); // Retrieve selected plan
+
         if (formData) {
             setSummaryData(formData);
             setUserData(JSON.parse(localStorage.getItem("userData"))); // Extract user data
         }
+
+        if (storedPlan) {
+            setSelectedPlan(storedPlan); // Set the selected plan in the state
+        }
     }, []);
 
-    if (!summaryData || !userData) {
+    if (!summaryData || !userData || !selectedPlan) {
         return <p>Cargando...</p>; // Display loading message until data is retrieved
     }
 
@@ -53,8 +61,10 @@ const Summary = () => {
                             <div className="card__plan">
                                 <div className="card__box-content">
                                     <h3 className="card__plan-title">Plan elegido</h3>
-                                    <p className="card__info">Plan en Casa y Clínica</p>
-                                    <p className="card__info">Costo del Plan: $99 al mes</p>
+                                    <p className="card__info">{selectedPlan.name}</p>
+                                    <p className="card__info">
+                                        Costo del Plan: {selectedPlan.price} al mes
+                                    </p>
                                 </div>
                             </div>
                         </div>
