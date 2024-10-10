@@ -1,5 +1,8 @@
 /* General Layout */
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
 }
@@ -7,8 +10,10 @@ body {
 .layout {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
+  //grid-template-columns: 100%;
   min-height: 100vh;
+  position: relative;
+
 }
 
 .background-image {

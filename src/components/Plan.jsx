@@ -11,7 +11,7 @@ const Plan = ()=>{
     };
 
     return (
-        <>
+        <div className="plan__container">
             <BackButton/>
 
             <div className="container-plan">
@@ -28,7 +28,7 @@ const Plan = ()=>{
                 </section>
             )}
 
-        </>
+        </div>
     )
 }
 

@@ -1,12 +1,10 @@
 import "./Header.scss";
-import ProgressBarSteps from "./ProgressBarSteps.jsx";
-import useCurrentStep from "../hooks/useCurrentStep";
+
 
 const Header = () => {
-    const currentStep = useCurrentStep(); // Use the hook to get the current step
 
     return (
-        <header className="navbar">
+        <div className="navbar">
             <div className="navbar__container">
                 <img src="/imgs/Logo.png" alt="Logo" className="navbar__logo" />
                 <div className="navbar__info">
@@ -21,12 +19,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-
-            {currentStep !== null && (
-                <ProgressBarSteps currentStep={currentStep} />
-            )}
-
-        </header>
+        </div>
     );
 };
 

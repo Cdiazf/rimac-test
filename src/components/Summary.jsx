@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "./Summary.scss";
 import BackButton from "./BackButton.jsx";
+import {calculateDiscount, useFormatDollar} from "../helper/Helper.jsx";
 
 const Summary = () => {
     const [summaryData, setSummaryData] = useState(null);
     const [userData, setUserData] = useState(null);
     const [selectedPlan, setSelectedPlan] = useState(null); // State for selected plan
-
+    const { formatDollar } = useFormatDollar();
 
     useEffect(() => {
         // Retrieve data from localStorage
@@ -29,6 +30,8 @@ const Summary = () => {
 
     // Extract form data
     const { documentNumber, cellNumber } = summaryData;
+    const discountPrice = calculateDiscount(selectedPlan.price); // Directly calling the utility function
+
 
     return (
         <div className="summary">
@@ -63,7 +66,7 @@ const Summary = () => {
                                     <h3 className="card__plan-title">Plan elegido</h3>
                                     <p className="card__info">{selectedPlan.name}</p>
                                     <p className="card__info">
-                                        Costo del Plan: {selectedPlan.price} al mes
+                                        Costo del Plan:  {formatDollar(discountPrice)} al mes
                                     </p>
                                 </div>
                             </div>
