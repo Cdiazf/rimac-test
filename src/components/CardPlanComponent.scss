@@ -1,0 +1,124 @@
+.card-plan-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  gap: 20px;
+  width: 928px;
+  margin: 20px auto 45px auto;
+}
+
+.card-plan {
+  &__body {
+    background-color: white;
+    border-radius: 24px;
+    padding: 68px 32px 48px;
+    box-shadow: 0px 1px 32px 0px rgba(174, 172, 243, 0.35);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 24px;
+    height: 100%;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__title-container {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__title {
+    font-family: "Lato", sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+    margin: 0;
+  }
+
+  &__sub-title {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 16px;
+    letter-spacing: 0.6px;
+    color: #7981b2;
+    margin: 0;
+  }
+
+  &__sub-price {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #7981b2;
+    margin: 0;
+  }
+
+  &__sub-disc-price {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+    margin: 0;
+  }
+
+  &__image-container {
+    width: 56px;
+    height: 56px;
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: -38px;
+  }
+
+  &__separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 20px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__list-item {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    width: 100%;
+    height: 48px;
+    padding: 14px 32px;
+    border-radius: 32px;
+    background: #ff1c44;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    text-align: center;
+  }
+}

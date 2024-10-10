@@ -1,0 +1,46 @@
+.back-button-container {
+  display: grid;
+  place-items: start; // Ensures the button is aligned to start
+  margin-bottom: 30px;
+
+}
+
+.back-button {
+  display: grid;
+  grid-template-columns: auto 1fr; // Icon and text side by side
+  align-items: center; // Align icon and text vertically
+  background-color: transparent;
+  width: 82px;
+  height: 20px;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  color: #4F4FFF;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0;
+
+
+  &:hover {
+    opacity: 0.8; // Add a hover effect
+  }
+}
+
+.back-button__icon {
+  display: grid;
+  place-items: center;
+}
+
+.back-button__text {
+  display: inline-block;
+  color: #4F4FFF;
+
+
+  font-family: "Lato",sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-align: center;
+
+}

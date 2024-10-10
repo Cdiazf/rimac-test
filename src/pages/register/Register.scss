@@ -1,0 +1,221 @@
+
+/* Register Section */
+.register {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 1296px;
+
+  &__image {
+    width: 100%;
+    max-width: 600px;
+    max-height: 640px;
+    padding: 32px 0 48px 120px;
+    gap: 0;
+
+    &-img {
+      width: 100%;
+      max-width: 480px;
+      max-height: 560px;
+      gap: 10px;
+      border-radius: 30px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 696px;
+    height:628px;
+    padding: 32px 216px 80px 128px;
+    gap: 24px;
+
+    &-tittle{
+      width: 100%;
+      max-width: 352px;
+      max-height: 168px;
+      gap: 16px;
+      &-head{
+        max-width: 352px;
+        max-height: 128px;
+        gap: 8px;
+      }
+    }
+
+  }
+
+  &__tag {
+    width: 172px;
+    height: 24px;
+    padding: 4px 8px 4px 8px;
+    border-radius: 4px 4px 4px 4px;
+    background: linear-gradient(86.01deg, #00F4E2 0%, #00FF7F 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-family: 'BR Sonoma', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    gap: 4px;
+  }
+
+  &__title {
+    width: 352px;
+    height: 80px;
+    font-family: "BR Sonoma",sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: left;
+    color: #03050F;
+  }
+
+  &__subtitle {
+    width: 352px;
+    height: 40px;
+    font-family: "BR Sonoma",sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #03050F;
+
+  }
+
+  &__form {
+    display: flex;
+    width: 352px;
+    flex-direction: column;
+    max-height: 451px;
+
+    &-input-group {
+      width: 356px;
+      height: 128px;
+      gap:16px;
+      &-fields{
+        width: 352px;
+        height: 56px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &-select {
+      width: 140px;
+      height: 56px;
+      margin-right: -1px;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid #5E6488;
+    }
+    &-text{
+      width: 212px;
+      height: 56px;
+      padding: 8px 16px 8px 16px;
+      border-radius: 0 8px 8px 0;
+      border: 1px solid #5E6488;
+    }
+    &-phone{
+      width: 352px;
+      height: 56px;
+      padding: 8px 16px 8px 16px;
+      gap: 8px;
+      border-radius: 8px 8px 8px 8px;
+      border: 1px solid #5E6488;
+
+    }
+
+    &-checkbox{
+
+      width: 351px;
+      height: 84px;
+      gap: 12px;
+
+      &-group{
+        width: 351px;
+        height:20px;
+        gap: 12px;
+        display: flex;
+        margin-top: 10px;
+      }
+      &-input{
+        width: 20px;
+        height: 20px;
+        padding: 2px ;
+        gap: 10px;
+        border-radius: 4px 4px 4px 4px;
+      }
+      &-text{
+        width: 319px;
+        height: 20px;
+        font-family:" BR Sonoma",sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        text-align: left;
+
+      }
+
+      &-condition{
+        font-family:" BR Sonoma",sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        text-align: left;
+      }
+
+    }
+
+    &-submit {
+      width: 195px;
+      height: 64px;
+      padding: 20px 40px 20px 40px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 20px;
+      gap: 8px;
+      border-radius: 40px;
+      background: #03050F;
+      color:#FFFFFF;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 385px) {
+  .register {
+    grid-template-columns: 1fr;
+    padding: 10px;
+
+    &__image {
+      width: 289px;
+      height: 193px;
+      top: -13px;
+      left: 427px;
+      gap: 0;
+
+
+      &-img{
+        order: 1;
+        width: 136px;
+        height: 160px;
+      }
+    }
+
+    &__content {
+      order: 2;
+      text-align: center;
+      padding: 2px;
+    }
+  }
+}
+
+

@@ -1,0 +1,60 @@
+/* General Layout */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
+}
+
+.background-image {
+  position: absolute;
+  width: 432px;
+  height: 656px;
+  top: 214px;
+  left: 0;
+  background-image: url('/imgs/blur-asset.png');
+  background-size: cover;
+  filter: brightness(1.2) contrast(1.3);
+  z-index: -1;
+}
+
+.background-image-right {
+  position: absolute;
+  width: 432px;
+  height: 1000px;
+  top: 63px;
+  right: 0;
+  background-image: url('/imgs/blur-asset_right.png');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(1.2) contrast(1.3);
+  z-index: -1;
+}
+
+/* Media query for max-width of 385px */
+@media (max-width: 385px) {
+  .background-image {
+    width: 300px;
+    height: 300px;
+    top: auto;
+    bottom: 0;
+    left: 0;
+  }
+
+
+  .background-image-right {
+    width: 200px;
+    height: 300px;
+    top: -100px;
+    right: 0;
+  }
+}
+
+
+
+
