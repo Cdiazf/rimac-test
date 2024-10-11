@@ -1,24 +1,26 @@
-// hooks/useFetchUserData.js
-import { useState } from "react";
-import {fetchUserData} from "../api/apiService.jsx";
+import { useState, useEffect } from "react";
 
-export const useFetchUserData = () => {
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+const useFetchUserData = () => {
     const [userData, setUserData] = useState(null);
 
-    const getUserData = async () => {
-        setLoading(true);
-        setError(null); // Reset error state before fetching
-        try {
-            const data = await fetchUserData();
-            setUserData(data); // Store user data if needed
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false); // Ensure loading is set to false regardless of success or failure
-        }
-    };
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const response = await fetch("https://rimac-front-end-challenge.netlify.app/api/user.json");
+                if (!response.ok) throw new Error("Failed to fetch user data");
 
-    return { getUserData, loading, error, userData };
+                const data = await response.json();
+                setUserData(data);
+                localStorage.setItem("userData", JSON.stringify(data));
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchUserData();
+    }, []);
+
+    return userData;
 };
+
+export default useFetchUserData;

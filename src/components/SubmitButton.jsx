@@ -6,9 +6,8 @@ const SubmitButton = ({ loading = false }) => (
     </button>
 );
 
-// Define PropTypes for the component
 SubmitButton.propTypes = {
-    loading: PropTypes.bool, // Indicates whether the button is in a loading state
+    loading: PropTypes.bool,
 };
 
 export default SubmitButton;

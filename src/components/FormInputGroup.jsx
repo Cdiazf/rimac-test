@@ -22,7 +22,7 @@ const FormInputGroup = ({ formData, handleChange, errors }) => (
                 value={formData.documentNumber}
                 onChange={handleChange}
             />
-            {errors.documentNumber && <p className="error-text">{errors.documentNumber}</p>} {/* Show error only if it exists */}
+            {errors.documentNumber && <p className="error-text">{errors.documentNumber}</p>}
         </div>
         <input
             type="text"
@@ -33,7 +33,7 @@ const FormInputGroup = ({ formData, handleChange, errors }) => (
             value={formData.phone}
             onChange={handleChange}
         />
-        {errors.phone && <p className="error-text">{errors.phone}</p>} {/* Show error only if it exists */}
+        {errors.phone && <p className="error-text">{errors.phone}</p>}
     </div>
 );
 

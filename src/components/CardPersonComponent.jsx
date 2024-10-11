@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const CardPersonComponent = ({ onCheckboxChange }) => {
     const [selectedCheckbox, setSelectedCheckbox] = useState(null);
@@ -42,6 +43,10 @@ const CardPersonComponent = ({ onCheckboxChange }) => {
             ))}
         </div>
     );
+};
+
+CardPersonComponent.propTypes = {
+    onCheckboxChange: PropTypes.func.isRequired
 };
 
 export default CardPersonComponent;

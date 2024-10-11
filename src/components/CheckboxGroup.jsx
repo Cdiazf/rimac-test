@@ -8,7 +8,7 @@ const CheckboxGroup = ({ formData, handleChange, errors }) => (
                 id="privacy"
                 name="privacyAccepted"
                 className="register__form-checkbox-input"
-                checked={formData.privacyAccepted || false} // Ensure default to false
+                checked={formData.privacyAccepted || false}
                 onChange={handleChange}
             />
             <label htmlFor="privacy" className="register__form-checkbox-text">
@@ -22,7 +22,7 @@ const CheckboxGroup = ({ formData, handleChange, errors }) => (
                 id="communications"
                 name="communicationsAccepted"
                 className="register__form-checkbox-input"
-                checked={formData.communicationsAccepted || false} // Ensure default to false
+                checked={formData.communicationsAccepted || false}
                 onChange={handleChange}
             />
             <label htmlFor="communications" className="register__form-checkbox-text">
